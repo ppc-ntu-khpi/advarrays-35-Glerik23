@@ -1,15 +1,17 @@
 import java.util.Arrays;
 
+/**
+ * Клас містить метод для обчислення суми всіх елементів двовимірної матриці.
+ */
 public class Main {
-
-    public static void main(String[] args) {
-        int [][] matrix = new int[3][3];
-        int x=0;
-
-        for(int[] row:matrix)
-            Arrays.fill(row,x);
-
-        for(int[] row:matrix)
-            System.out.println(Arrays.toString(row));
+    /**
+     * Обчислює суму всіх елементів прямокутної матриці.
+     * @param matrix двовимірний масив цілих чисел
+     * @return сума всіх елементів
+     */
+    public static int sumMatrix(int[][] matrix) {
+        return Arrays.stream(matrix)
+                     .flatMapToInt(Arrays::stream)
+                     .sum();
     }
 }
